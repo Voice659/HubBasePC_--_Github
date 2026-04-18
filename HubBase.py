@@ -1,13 +1,14 @@
 import time  #(16.03.2026)
 import random
+from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a8.3.1"
+    VN = "a9.0.0"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 12 2026, 10:42:57) ---")
+    print("--- HubBase "+VN+" (default, Apr 15 2026, 21:09:07) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -270,6 +271,59 @@ def Programm14():  #(12.04.2026)
             ES = ES + x
     print("The message is:", ES)
 
+def Programm15():  #(13.04.2026)
+    color("blue")
+    shape("turtle")
+    speed(10)
+    pensize(4)
+    NoA = int(input("How many sides do you want? -- "))
+    Angle = 360 / NoA
+    for Cyc7 in range(NoA):
+        forward(50)
+        right(Angle)
+
+def Programm16():  #(15.04.2026)
+
+    def VShape(size):
+        right(25)
+        forward(size)
+        backward(size)
+        left(50)
+        forward(size)
+        backward(size)
+        right(25)
+
+    def SnowflakeArm(size):
+        for Cyc8 in  range(4):
+            forward(size)
+            VShape(size)
+        backward(size*4)
+
+    def Snowflake(size):
+        for Cyc7 in range(NoA):
+            color(random.choice(colors))
+            SnowflakeArm(size)
+            right(Angle)
+
+    colors = ["white","blue","cyan","purple","green","white","white"]
+    goto(0,0)
+    shape("turtle")
+    speed(10)
+    pensize(6)
+    Screen().bgcolor("turquoise")
+    clear()
+    NoA = int(input("How many arms do you want? -- "))
+    NoS = int(input("How many snowflakes do you want? -- "))
+    Angle = 360 / NoA
+    for Cyc9 in range(NoS):
+        size = random.randint(5,30)
+        x = random.randint(-400, 400)
+        y = random.randint(-400, 400)
+        penup()
+        goto(x,y)
+        pendown()
+        Snowflake(size)
+
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
@@ -368,11 +422,21 @@ def Code():
                                             pass
                                         else:
                                             Programm13()
-                                            CTNP()  # (12.04.2026)
+                                            CTNP()  #(12.04.2026)
                                             if Stop == 1:
                                                 pass
                                             else:
                                                 Programm14()
+                                                CTNP()  #(15.04.2026)
+                                                if Stop == 1:
+                                                    pass
+                                                else:
+                                                    Programm15()
+                                                    CTNP()
+                                                    if Stop == 1:
+                                                        pass
+                                                    else:
+                                                        Programm16()
     else:
         pass
     print("")  #(16.03.2026)
@@ -402,8 +466,17 @@ def Restart():  #(16.03.2026)
         Exit_Chioce = E_C = input("Do you want to exit the programm?[Y/N] -- ").upper()
         if E_C == "N":
             PrStart = input("What programm to start at? -- ")
-            if PrStart == "14":
+            if PrStart == "2":
+                Programm2()
+                Restart()
+            elif PrStart == "14":
                 Programm14()
+                Restart()
+            elif PrStart == "15":
+                Programm15()
+                Restart()
+            elif PrStart == "16":
+                Programm16()
                 Restart()
             else:
                 Code()
