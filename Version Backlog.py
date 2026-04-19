@@ -1,5 +1,5 @@
-print("--- Version Backlog a8-a9 (default, Apr 15 2026) ---")
-print("V`s available are a8.0.0 - a9.0.0")
+print("--- Version Backlog a8-a9.0.1 (default, Apr 19 2026) ---")
+print("V`s available are a8.0.0 - a9.0.1")
 print("Exceptions:")
 print("a0.1.0, a0.1.1")
 print("Newest - a9, start - a8")
@@ -119,6 +119,14 @@ elif D1 == "a9":
                 print("    - Added 'Turtle' programm №2(Pr16)(Pt2)!")
             else:
                 print("Such release does not exist or isn`t documented")
+        if D3 == "1":
+            if D4 == "R":
+                print("--- HubBase a9.0.1 (default, Apr 19 2026, 10:31:44) ---")
+                print("Bugfix №4!")
+                print("Changes:")
+                print("    - Fixed 'Programm16()' funky snowflakes bug")
+            else:
+                print("Such release does not exist or isn`t documented")
         else:
             print("Such release does not exist or isn`t documented")
     else:
@@ -133,7 +141,7 @@ elif D1 == "a0":
                 print("print(Num + Num2)")
             else:
                 print("Such release does not exist or isn`t documented")
-        if D3 == "1":
+        elif D3 == "1":
             if D4 == "R":
                 print("The code:")
                 print("Num = input('Number = ')")
@@ -150,3 +158,4 @@ elif D1 == "a0":
 else:
     print("Such release does not exist or isn`t documented")
 s = input("")
+
