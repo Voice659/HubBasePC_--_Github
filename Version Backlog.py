@@ -1,5 +1,5 @@
-print("--- Version Backlog a8-a9.0.1 (default, Apr 19 2026) ---")
-print("V`s available are a8.0.0 - a9.0.1")
+print("--- Version Backlog a8-a9.0.2 (default, Apr 19 2026) ---")
+print("V`s available are a8.0.0 - a9.0.2")
 print("Exceptions:")
 print("a0.1.0, a0.1.1")
 print("Newest - a9, start - a8")
@@ -125,6 +125,14 @@ elif D1 == "a9":
                 print("Bugfix №4!")
                 print("Changes:")
                 print("    - Fixed 'Programm16()' funky snowflakes bug")
+            else:
+                print("Such release does not exist or isn`t documented")
+        if D3 == "2":
+            if D4 == "R":
+                print("--- HubBase a9.0.2 (default, Apr 19 2026, 18:41:07) ---")
+                print("Bugfix №5!")
+                print("Changes:")
+                print("    - Fixed 'Pr-start' tracking only 2 and 14-16")
             else:
                 print("Such release does not exist or isn`t documented")
         else:
