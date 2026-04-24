@@ -5,6 +5,7 @@
 | Version | Supported          |
 | ------- | ------------------ |
 | a9.2   | :white_check_mark: |
+| >= a9.1.2   | :white_check_mark: |
 | < a9.1   | :x:                |
 
 ## Reporting a Vulnerability
