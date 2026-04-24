@@ -1,12 +1,14 @@
-print("--- Version Backlog a8-a9B (default, Apr 12 2026) ---")
-print("V`s available are a8.0.0 - a9.0.0B")
-print("Newest - a9 (in beta), start - a8")
+print("--- Version Backlog a8-a9.1.2 (+a10B) (default, Apr 22 2026) ---")
+print("V`s available are a8.0.0 - a9.1.2")
+print("Exceptions:")
+print("a0.1.0, a0.1.1, a2.7.19, a10.0.0B")
+print("Newest - a9, start - a8")
 D1 = input("The Main part -- ").lower()
 print("1,2,3 and so on")
 D2 = input("The addition -- ")
 print("1,2,3 and so on")
 D3 = input("The fix -- ")
-print("B - for betas, D - for demos, R - for releases")
+print("B - for betas, PR - for prereleases, R - for releases")
 D4 = input("Access to Version -- ").upper()
 print("")
 if D1 == "a8":
@@ -101,11 +103,116 @@ elif D1 == "a9":
     if D2 == "0":
         if D3 == "0":
             if D4 == "B":
-                print("This release is not complete, it is only a beta!(Probably won`t change!)")
                 print("--- HubBase a9.0.0B (default, Apr 12 2026, 21:17:18) ---")
+                print("The first big update!!(Beta!)")
+                print("Addition:")
+                print("    - Added 'Turtle' programm №1(Pr15)!")
+            elif D4 == "PR":
+                print("--- HubBase a9.0.0PR (default, Apr 15 2026, 19:49:17) ---")
+                print("The first big update!!(Not done!)")
+                print("Addition:")
+                print("    - Added 'Turtle' programm №2(Pr16)(Pt1)!")
+            elif D4 == "R":
+                print("--- HubBase a9.0.0 (default, Apr 15 2026, 21:09:07) ---")
                 print("The first big update!!")
                 print("Addition:")
-                print("    - Added 'Turtle' programm №1!(Bugtest not complete!)")
+                print("    - Added 'Turtle' programm №2(Pr16)(Pt2)!")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "1":
+            if D4 == "R":
+                print("--- HubBase a9.0.1 (default, Apr 19 2026, 10:31:44) ---")
+                print("Bugfix №4!")
+                print("Changes:")
+                print("    - Fixed 'Programm16()' funky snowflakes bug")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "2":
+            if D4 == "R":
+                print("--- HubBase a9.0.2 (default, Apr 19 2026, 18:41:07) ---")
+                print("Bugfix №5!")
+                print("Changes:")
+                print("    - Fixed 'Pr-start' tracking only 2 and 14-16")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    if D2 == "1":
+        if D3 == "0":
+            if D4 == "R":
+                print("--- HubBase a9.1.0 (default, Apr 22 2026, 18:29:45) ---")
+                print("Addition №4!")
+                print("Changes:")
+                print("    - Added HubBasePE integration")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "1":
+            if D4 == "R":
+                print("--- HubBase a9.1.1 (default, Apr 22 2026, 19:35:59) ---")
+                print("Bugfix №6!")
+                print("Changes:")
+                print("    - Fixed HubBasePE integration not working")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "2":
+            if D4 == "R":
+                print("--- HubBase a9.1.2 (default, Apr 22 2026, 20:07:09) ---")
+                print("Bugfix №7!")
+                print("Changes:")
+                print("    - Fixed PE programm order!")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    else:
+        print("Such release does not exist or isn`t documented")
+elif D1 == "a0":
+    if D2 == "1":
+        if D3 == "0":
+            if D4 == "R":
+                print("The code:")
+                print("Num = input('Number = ')")
+                print("Num2 = input('Number2 = ')")
+                print("print(Num + Num2)")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "1":
+            if D4 == "R":
+                print("The code:")
+                print("Num = input('Number = ')")
+                print("Num2 = input('Number2 = ')")
+                print("num = int(Num)")
+                print("num2 = int(Num2)")
+                print("print(num + num2)")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    else:
+        print("Such release does not exist or isn`t documented")
+elif D1 == "a2":
+    if D2 == "7":
+        if D3 == "19":
+            if D4 == "R":
+                print("Release №1 with version number")
+                print("Featuring:")
+                print("    - 4 programms! (and the 5`th as a launchable)")
+                print("    - The name - №2!")
+                print("    - Vip`s!")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    else:
+        print("Such release does not exist or isn`t documented")
+elif D1 == "a10":
+    if D2 == "0":
+        if D3 == "0":
+            if D4 == "B":
+                print("--- HubBase a10.0.0B (base - a9.1.2) (default, Apr 24 2026, 12:11:14) ---")
+                print("The second big update!!(Beta!)")
+                print("Addition:")
+                print("    - Added 'Tkinter' programm №1(Pr17)!")
             else:
                 print("Such release does not exist or isn`t documented")
         else:
@@ -115,3 +222,4 @@ elif D1 == "a9":
 else:
     print("Such release does not exist or isn`t documented")
 s = input("")
+
