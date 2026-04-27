@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "a10.0.0PR"
+    VN = "a10.0.0"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 25 2026, 13:24:32) ---")
+    print("--- HubBase "+VN+" (default, Apr 27 2026, 11:51:41) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -348,6 +348,58 @@ def Programm17():  #(24.04.2026)
     button1.bind("<ButtonRelease-1>", onClick)
     window1.mainloop()
 
+def Programm18():  #(27.04.2026)
+    print("To draw, use LMB.")
+    window2 = tkr.Tk()
+    canvas1 = tkr.Canvas(window2, bg="white", width=750, height=500)
+    canvas1.pack()
+    global lastX, lastY
+    lastX, lastY = 0,0
+    global Scolor
+    Scolor = "black"
+    width = int(input("How wide do you want your pencil? -- "))
+    red_id = canvas1.create_rectangle(10,10,30,30, fill="red")
+    blue_id = canvas1.create_rectangle(10,35,30,55, fill="blue")
+    black_id = canvas1.create_rectangle(10,60,30,80, fill="black")
+    white_id = canvas1.create_rectangle(10,85,30,105, fill="white")
+
+    def StoreNewPos(event):
+        global lastX, lastY
+        lastX = event.x
+        lastY = event.y
+
+    def onClick(event):
+        StoreNewPos(event)
+
+    def onDrag(event):
+        global Scolor
+        canvas1.create_line(lastX, lastY, event.x, event.y, fill=Scolor,width=width)
+        StoreNewPos(event)
+
+    def CCTR(event):
+        global Scolor
+        Scolor = "red"
+
+    def CCTB(event):
+        global Scolor
+        Scolor = "blue"
+
+    def CCTb(event):
+        global Scolor
+        Scolor = "black"
+
+    def CCTW(event):
+        global Scolor
+        Scolor = "white"
+
+    canvas1.bind("<Button-1>", onClick)
+    canvas1.bind("<B1-Motion>", onDrag)
+    canvas1.tag_bind(red_id, "<Button-1>", CCTR)
+    canvas1.tag_bind(blue_id, "<Button-1>", CCTB)
+    canvas1.tag_bind(black_id, "<Button-1>", CCTb)
+    canvas1.tag_bind(white_id, "<Button-1>", CCTW)
+    window2.mainloop()
+
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
@@ -470,22 +522,27 @@ def Code():
                                                         else:
                                                             Programm17()
                                                             CTNP()
-                                                            print("PE programms next! (If you chose N then they won`t load!)")
                                                             if Stop == 1:
                                                                 pass
                                                             else:
-                                                                if PlPr == "Y":
-                                                                    Main.ProgrammP1()
-                                                                    CTNP()  #(22.04.2026)
-                                                                    if Stop == 1:
-                                                                        pass
-                                                                    else:
-                                                                        Main.ProgrammP2()
-                                                                        CTNP()  # (22.04.2026)
+                                                                Programm18()
+                                                                print("PE programms next! (If you chose N then they won`t load!)")
+                                                                CTNP()
+                                                                if Stop == 1:
+                                                                    pass
+                                                                else:
+                                                                    if PlPr == "Y":
+                                                                        Main.ProgrammP1()
+                                                                        CTNP()  #(22.04.2026)
                                                                         if Stop == 1:
                                                                             pass
                                                                         else:
-                                                                            Main.ProgrammP3()
+                                                                            Main.ProgrammP2()
+                                                                            CTNP()  # (22.04.2026)
+                                                                            if Stop == 1:
+                                                                                pass
+                                                                            else:
+                                                                                Main.ProgrammP3()
     else:
         pass
     print("")  #(16.03.2026)
@@ -565,6 +622,9 @@ def Restart():  #(16.03.2026)
                 Restart()
             elif PrStart == "17":
                 Programm17()
+                Restart()
+            elif PrStart == "18":
+                Programm18()
                 Restart()
             elif PrStart == "P1":
                 Main.ProgrammP1()

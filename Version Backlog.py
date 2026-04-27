@@ -1,5 +1,5 @@
-print("--- Version Backlog a8-a10PR (default, Apr 25 2026) ---")
-print("V`s available are a8.0.0 - a10.0.0PR")
+print("--- Version Backlog a8-a10 (default, Apr 27 2026) ---")
+print("V`s available are a8.0.0 - a10.0.0")
 print("Exceptions:")
 print("a0.1.0, a0.1.1, a2.7.19")
 print("Newest - a10, start - a8")
@@ -10,6 +10,7 @@ print("1,2,3 and so on")
 D3 = input("The fix -- ")
 print("B - for betas, PR - for prereleases, R - for releases")
 D4 = input("Access to Version -- ").upper()
+print("The security updates are exclusive to the wiki!")
 print("")
 if D1 == "a8":
     if D2 == "0":
@@ -18,7 +19,6 @@ if D1 == "a8":
                 print("--- HubBase a8.0.0 (default, Apr 10 2026) ---")
                 print("Official release!")
                 print("Featuring:")
-                # noinspection SpellCheckingInspection
                 print("    - 12 programms!")
                 print("    - Looped showcase!")
                 print("    - Vip`s!")
@@ -219,6 +219,11 @@ elif D1 == "a10":
                 print("The second big update!!(Not done!)")
                 print("Addition:")
                 print("    - Added HubBasePE v0.0.1rc1.post1 support!")
+            elif D4 == "R":
+                print("--- HubBase a10.0.0 (default, Apr 26 2026, 11:51:41) ---")
+                print("The second big update!!")
+                print("Addition:")
+                print("    - Added 'Tkinter' programm №1(Pr17)!")
             else:
                 print("Such release does not exist or isn`t documented")
         else:
@@ -228,3 +233,4 @@ elif D1 == "a10":
 else:
     print("Such release does not exist or isn`t documented")
 s = input("")
+
